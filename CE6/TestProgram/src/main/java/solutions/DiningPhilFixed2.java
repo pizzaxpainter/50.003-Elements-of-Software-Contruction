@@ -82,3 +82,21 @@ class MyFork2 {
         reentrantLock.unlock();
     }
 }
+
+
+// In the fixed version of DiningPhilFixed2.java, the following changes were made to address the deadlock issue:
+
+// Introduction of ReentrantLock: The MyFork2 class now uses a ReentrantLock to provide explicit locking for the forks. 
+// Each fork has its own lock. By using a ReentrantLock, we ensure that only one philosopher can hold a fork at a time.
+
+// pickup() method with timeout: The pickup() method in the MyFork2 class now uses tryLock() with a timeout. 
+// This means that a philosopher will try to acquire a lock on the fork but will not wait indefinitely if the lock is unavailable. 
+// Instead, it will try for a specified amount of time (randomly chosen between 0 and 1000 milliseconds) and return immediately if it fails to acquire the lock. 
+// This prevents the deadlock situation where all philosophers are waiting indefinitely for a fork.
+
+// Break condition in the run() method: Inside the PhilosopherFixed2 class, a break condition is added when a philosopher fails to acquire the left fork. 
+// If a philosopher cannot acquire the left fork, it releases any fork it has acquired and breaks out of the infinite loop. 
+// This ensures that no philosopher holds a fork indefinitely, avoiding the possibility of deadlock.
+
+// By introducing explicit locking with ReentrantLock and using timeouts for acquiring locks, we eliminate the possibility of deadlock in the dining philosophers problem. 
+// The changes allow the philosophers to release forks if they cannot acquire both forks and prevent all philosophers from being blocked indefinitely, thus resolving the deadlock issue.

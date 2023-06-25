@@ -96,3 +96,16 @@ class PhilosopherFixed extends Thread {
         }
     }
 }
+
+// The fix in the DiningPhilFixed1 code helps prevent deadlock by introducing a global ordering on the locking of forks. 
+// The change is made in the PhilosopherFixed.run() method where the philosophers pick up the forks in a specific order.
+
+// In the original code, the philosophers could potentially pick up the forks in different orders, leading to a potential circular waiting scenario where each philosopher is waiting for the right fork held by their neighbor. 
+// This can result in a deadlock situation.
+
+// In the fixed code, a global ordering on the locking is introduced by checking the index of the philosopher. 
+// The philosopher with index 0 (the first philosopher) picks up the right fork first and then the left fork. 
+// The other philosophers pick up the left fork first and then the right fork. 
+// This ensures a consistent and predictable order of acquiring the forks, eliminating the possibility of circular waiting and deadlock.
+
+// By establishing a global ordering, the fixed code guarantees that only one philosopher can have access to both forks simultaneously, preventing deadlock and ensuring progress in the dining philosophers problem.
