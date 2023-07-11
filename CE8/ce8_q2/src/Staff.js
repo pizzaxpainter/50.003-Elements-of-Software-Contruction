@@ -126,11 +126,9 @@ function Staff() {
 
 
     useEffect( () => {
-        <tr key={staffs.code}>
-            <td>{staffs.code}</td>
-
-        </tr>
+        
         // TODO: fixme:
+        initDepts();
     }, []);
 
     return (
