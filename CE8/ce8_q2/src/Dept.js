@@ -42,8 +42,26 @@ function DeptList({depts}) {
         );
     }
     return (        
-        <div></div> // TODO: fixme
-    )
+        <div>
+            <h1>Department Table</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+            <tbody>
+                {this.state.departments.map((dept) => (
+                    <tr key={dept.code}>
+                        <td>{dept.code}</td>
+                        <td>{dept.name}</td>
+                    </tr>
+                ))}
+            </tbody>
+            </table>
+        </div> // TODO: fixme
+    );
 }
 
 function Dept() {

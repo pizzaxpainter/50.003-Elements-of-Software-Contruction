@@ -24,8 +24,9 @@ function handleSendButtonClick() {
             var res = xhr.responseText;
             var json = JSON.parse(res);
             // TODO: fixme
-        }
-    }; 
+            update_deptsregion(json);
+
+} 
     // cosntructing a HTTP POST request
     var params = `code=${code.value}`;
     xhr.open('POST', `/dept/submit/`, true);
