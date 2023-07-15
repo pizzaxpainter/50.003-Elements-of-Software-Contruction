@@ -43,24 +43,14 @@ function DeptList({depts}) {
     }
     return (        
         <div>
-            <h1>Department Table</h1>
             <table>
-                <thead>
-                    <tr>
-                        <th>Code</th>
-                        <th>Name</th>
-                    </tr>
-                </thead>
-            <tbody>
-                {this.state.departments.map((dept) => (
-                    <tr key={dept.code}>
-                        <td>{dept.code}</td>
-                        <td>{dept.name}</td>
-                    </tr>
-                ))}
-            </tbody>
+                <tbody>
+                    <tr><th>Department Code</th></tr>
+                    {rows}
+                </tbody>
             </table>
-        </div> // TODO: fixme
+        </div>
+        // TODO: fixme
     );
 }
 

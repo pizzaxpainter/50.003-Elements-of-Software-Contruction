@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form action="/echo/submit" method="post">
+        <div>Enter Your Message:</div>
+        <div><input id="message" name="message" type="text"/> </div>
+        <div><input type="submit" value="Send"/></div>
+    </form>
+    <ol>
+        <% for (var i = 0; i < messages.length; i++) { %>
+        <li>
+            <div><%=messages[i].time%></div><div><%=messages[i].msg%></div>
+        </li>
+        <% } %>
+    </ol>
+  </body>
+</html>
