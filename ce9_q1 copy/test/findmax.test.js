@@ -20,9 +20,9 @@ describe('testing findmax', () => {
     })
 });
 
-//Question 2
+
 describe('equivalence class testing', () => {
-//A test that finds empty arrays
+//A test that finds array with negative values
     test('a test that finds empty arrays', () => {
     const list4 = findmax([]);
     expect(list4).toBe(undefined);
