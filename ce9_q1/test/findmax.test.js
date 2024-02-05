@@ -10,7 +10,7 @@ describe('testing findmax', () => {
     // TODO: a test that results in error, it should throw an error that the test won't catch
     test('a test that throws error', () => { 
         const list2 = findmax(undefined);
-        expect(list2).toThrow();
+        expect(list2)then .toThrow();
 
     })
     // TODO: a test that results in pass
